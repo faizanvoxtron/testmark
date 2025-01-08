@@ -1,0 +1,14 @@
+[09-Jun-2023 00:05:52 UTC] PHP Notice:  Undefined offset: 0 in /home/desivmoe/trademarkroyalty.com/data/view.php on line 64
+[09-Jun-2023 00:05:52 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[09-Jun-2023 00:05:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[09-Jun-2023 00:06:13 UTC] PHP Notice:  Undefined offset: 0 in /home/desivmoe/trademarkroyalty.com/data/view.php on line 64
+[09-Jun-2023 00:06:13 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[09-Jun-2023 00:06:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[09-Jun-2023 00:11:24 UTC] PHP Notice:  Undefined offset: 0 in /home/desivmoe/trademarkroyalty.com/data/view.php on line 64
+[09-Jun-2023 00:11:24 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[09-Jun-2023 00:11:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/desivmoe/trademarkroyalty.com/data/view.php on line 65
+[05-Sep-2023 21:43:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on bool in /home/desivmoe/trademarkroyalty.com/service/connectionClass.php:142
+Stack trace:
+#0 /home/desivmoe/trademarkroyalty.com/data/view.php(63): database->selectData('payintents', Array, Array)
+#1 {main}
+  thrown in /home/desivmoe/trademarkroyalty.com/service/connectionClass.php on line 142

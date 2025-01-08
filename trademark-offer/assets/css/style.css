@@ -1,0 +1,391 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 30px;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+footer {
+  background: #1f69d2;
+  padding-top: 0;
+}
+
+footer p,
+footer .links li a {
+  font-weight: 300;
+  color: var(--white);
+  display: inline-block;
+  padding: 5px 0;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+}
+
+.links.inline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  color: var(--white);
+}
+
+footer p,
+footer .links li a {
+  font-weight: 300;
+  color: var(--white);
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.PackagesBoxInner .clearfix {
+  display: none;
+}
+
+.PackagesBoxInner p {
+  border-bottom: 2px solid var(--primary);
+  padding: 10px 0 25px 0;
+  font-size: 17px;
+}
+
+.PackagesBoxInner ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  position: relative;
+}
+
+.PackagesBoxInner ul li:before {
+  content: "\f058";
+  position: absolute;
+  left: -23px;
+  font-size: inherit;
+  font-family: FontAwesome;
+  color: #5856e9;
+}
+
+.PackagesMAinBox:hover *,
+.PackagesMAinBox.selected * {
+  color: #ffffff;
+}
+
+.PackagesMAinBox:hover ul li:before {
+  color: #ffffff;
+}
+
+.PackagesMAinBox:hover .PackagesBoxInner p,
+.PackagesMAinBox.selected .PackagesBoxInner p {
+  border-bottom: 2px solid #ffffff;
+}
+
+.PackagesBoxInner ul {
+  margin: 30px 0;
+  min-height: unset;
+  height: 250px;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+
+.PackagesMAinBox:hover ul::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
+/* Popup Form CSS */
+
+#popupform input {
+  background: #e8e8ed !important;
+  border-radius: 15px;
+  border: 1px solid #898686;
+}
+
+#popupform textarea {
+  min-height: 100px;
+  background: #e8e8ed !important;
+  border-radius: 15px;
+  border: 1px solid #898686;
+}
+
+.popup-content input[type="email"]:focus,
+.popup-content input[type="text"]:focus,
+.popup-content input[type="tel"]:focus,
+.popup-content textarea:focus {
+  border: 1px solid #1f69d2 !important;
+}
+
+.navbar-expand-xl {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.slick-dots li button:before {
+  font-size: 25px;
+}
+
+.RigesterFrom .form-control {
+  margin-bottom: 1.7rem;
+}
+
+#contactform .form-group,
+#pform .form-group {
+  position: relative;
+}
+
+#contactform label.error {
+  color: red;
+  font-size: 14px;
+  text-align: left;
+  display: block;
+  position: absolute;
+  bottom: -33px;
+}
+
+#pform label.error {
+  color: red;
+  font-size: 14px;
+  text-align: left;
+  display: block;
+}
+
+.packagesCarousel .slick-slider {
+  margin: 0 -15px;
+}
+
+.packagesCarousel .slick-slide {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.packagesCarousel .slick-dots {
+  position: absolute;
+  bottom: -50px;
+}
+
+.PackagesMAinBox strike {
+  display: block;
+  font-size: 40px;
+  color: red;
+}
+
+.TestimonialBoxMain {
+  min-height: 300px;
+}
+
+/* Popup CSS */
+div#popupform {
+  width: 600px;
+}
+
+.popup-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+.popup-header {
+  padding: 30px 20px;
+  background: #1f69d2;
+  color: white;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.popup-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 3px;
+  color: #fff;
+}
+
+.popup-header h3 {
+  background: white;
+  color: #000000;
+  font-size: 16px;
+  color: #000000;
+  margin: 0 0 30px;
+  width: 250px;
+  margin: auto;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 5px #00000057;
+  border-radius: 10px;
+  bottom: -28px;
+  font-size: 18px;
+  animation: zoomInOut 2s infinite;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.popup-bottom {
+  padding: 50px 40px;
+  padding-top: 70px;
+  background: url(../images/popup-overlay-new.png);
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: left;
+  background-position-x: -60px;
+  padding-bottom: 40px;
+}
+
+#popupform .form-group {
+  position: relative;
+}
+
+#popupform label.error {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  font-weight: 500;
+}
+
+#popupform input,
+#popupform textarea {
+  background: transparent !important;
+  border-radius: 5px;
+  border: 1px solid #898686;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #1f69d261 !important;
+}
+
+.popup-content textarea {
+    height: 120px;
+}
+
+#popupform #c2 {
+  padding: 10px 50px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .BannerMain {
+    padding: 16rem 0 10px;
+    text-align: center;
+  }
+
+  header .navbar {
+    flex-direction: column;
+  }
+
+  .NavRight {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  header .logo img {
+    width: 200px;
+  }
+
+  header,
+  section,
+  footer {
+    overflow-x: hidden !important;
+  }
+
+  /* .Tradeblogimg {
+    display: block !important;
+  } */
+}
+
+@media only screen and (max-width: 1500px) {
+  .logo img {
+    width: 300px;
+  }
+}
+
+
+/*Phonenumber CSS*/
+.hide {
+  display: none !important;
+}
+
+.phone-banner {
+  position: relative;
+}
+
+.phone-banner .phone {
+  padding-left: 60px !important;
+}
+
+.phone-banner .iti--allow-dropdown {
+  top: 24px;
+  left: 8px;
+  position: absolute;
+}
+
+.phone-banner .iti__country-list {
+    top: 22px;
+    font-size: 13px;
+    color: black !important;
+}
+
+.iti__flag {
+  height: 15px;
+  box-shadow: 0px 0px 1px 0px #888;
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/img/flags.png");
+  background-repeat: no-repeat;
+  background-color: #dbdbdb;
+  background-position: 20px 0;
+}
+
+.phone-popup {
+  position: relative;
+}
+
+.phone-popup .phone {
+  padding-left: 60px !important;
+}
+
+.phone-popup .iti--allow-dropdown {
+  top: 21px;
+  left: 8px;
+  position: absolute;
+}
+
+.phone-popup .iti__country-list {
+  top: 20px;
+  font-size: 13px;
+}
+
+.iti-mobile .iti--container {
+  top: 0;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+}
+
+#popupform #phone01-error {
+    bottom: -20px;
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .phone-banner .iti--allow-dropdown {
+    top: 18px;
+    left: 8px;
+    position: absolute;
+    }
+}
