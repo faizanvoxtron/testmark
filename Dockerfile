@@ -1,43 +1,42 @@
-# Base image
-FROM php:8.1-fpm
+FROM php:8.3-apache
 
-# Install dependencies
+# Install dependencies and common PHP extensions
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
+    libzip-dev \
     zip \
     unzip \
-    libpq-dev \
-    libzip-dev \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
     libonig-dev \
     libxml2-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev
+    curl \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+        gd \
+        mysqli \
+        pdo \
+        pdo_mysql \
+        mbstring \
+        zip \
+        exif \
+        xml \
+        opcache
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath gd
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
-# Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Set working directory
+# Set working directory in the container
 WORKDIR /var/www/html
 
-# Copy application files
-COPY . .
+# Copy website files to the container
+COPY . /var/www/html
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage \
-    && chmod -R 755 /var/www/html/bootstrap/cache
+# Set proper permissions for Apache
+RUN chown -R www-data:www-data /var/www/html
 
-RUN composer install
+# Expose port 80 for Apache
+EXPOSE 80
 
-# Expose port
-EXPOSE 9000
-
-# Start PHP-FPM server
-CMD ["php", "-S", "0.0.0.0:9000", "-t", "public"]
-
-
+# Start Apache in the foreground
+CMD ["apache2-foreground"]
