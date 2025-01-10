@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trademarkroyalty-web
+  labels:
+    app: trademarkroyalty-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trademarkroyalty-web
+  template:
+    metadata:
+      labels:
+        app: trademarkroyalty-web
+    spec:
+      containers:
+        - name: trademarkroyalty-web
+          image: voxtrondocker/trademarkroyalty:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
