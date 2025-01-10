@@ -14,9 +14,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
         gd \
-        mysqli \
-        pdo \
-        pdo_mysql \
         mbstring \
         zip \
         exif \
@@ -29,14 +26,16 @@ RUN a2enmod rewrite
 # Set working directory in the container
 WORKDIR /var/www/html
 
-# Copy website files to the container
+# Copy website files and additional directories to the container
 COPY . /var/www/html
+COPY ./nitropack-sdk /var/www/nitropack-sdk
 
-# Set proper permissions for Apache
-RUN chown -R www-data:www-data /var/www/html
+# Set proper permissions for Apache and additional files
+RUN chown -R www-data:www-data /var/www/html /var/www/nitropack-sdk
 
 # Expose port 80 for Apache
 EXPOSE 80
 
 # Start Apache in the foreground
 CMD ["apache2-foreground"]
+
